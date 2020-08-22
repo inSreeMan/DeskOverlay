@@ -20,7 +20,7 @@ namespace DeskOverlay
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, iOverlayWindow
+    public partial class TaskbarWindow : Window, iOverlayWindow
     {
         public TextDataLoader TextDataLoader { get; private set; }
 
@@ -104,13 +104,15 @@ namespace DeskOverlay
 
             RegisterHotKey(handle, HOTKEY_ID, 0, VK_MYKEY); //CTRL + CAPS_LOCK
         }
-        public MainWindow()
+        public TaskbarWindow()
         {
             InitializeComponent();
             this.ShowInTaskbar = false;
 
-            var smbginfoFile = JSettings.AppDataFile;//SMPaths.GetAppDataFile("smbginfo.txt");
+            var smbginfoFile = JSettings.AppDataFile; //SMPaths.GetAppDataFile("smtaskbarinfo.txt");
             TextDataLoader = new TextDataLoader(smbginfoFile);
+
+            this.lblDisplayText.FontSize = JSettings.Fontsize;
 
         }
 
@@ -126,40 +128,42 @@ namespace DeskOverlay
             this.TextDataLoader.Refresh();
             this.lblDisplayText.Text = this.TextDataLoader.Data;
 
+
             this.lblDisplayText.FontSize = JSettings.Fontsize;
             // position TopRight,MiddleRight,BottomRight
             this.lblDisplayText.SetValue(Grid.RowProperty, JSettings.DisplayGridRow);
             this.lblDisplayText.SetValue(Grid.ColumnProperty, JSettings.DisplayGridColumn);
 
-            this.backfill.SetValue(Grid.RowProperty, JSettings.DisplayGridRow);
-            this.backfill.SetValue(Grid.ColumnProperty, JSettings.DisplayGridColumn);
+            //this.backfill.SetValue(Grid.RowProperty, JSettings.DisplayGridRow);
+            //this.backfill.SetValue(Grid.ColumnProperty, JSettings.DisplayGridColumn);
 
             this.lblDisplayText.TextAlignment = JSettings.TextAlignment;
 
             var margin = JSettings.Margin;
-            if (null != margin) {
+            if (null != margin)
+            {
                 this.lblDisplayText.Margin = (Thickness)margin;
             }
 
             var textColor = JSettings.TextColor;
-            if(null != textColor)
+            if (null != textColor)
             {
                 this.lblDisplayText.Foreground = (Brush)textColor;
             }
 
-            if (JSettings.ShowBackfill)
-            {
-                var fillColor = JSettings.FillColor;
-                if (null != fillColor)
-                {
-                    this.backfill.Fill = (Brush)fillColor;
-                }
-                this.backfill.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                this.backfill.Visibility = Visibility.Hidden;
-            }
+            //if (JSettings.ShowBackfill)
+            //{
+            //    var fillColor = JSettings.FillColor;
+            //    if (null != fillColor)
+            //    {
+            //        this.backfill.Fill = (Brush)fillColor;
+            //    }
+            //    this.backfill.Visibility = Visibility.Visible;
+            //}
+            //else
+            //{
+            //    this.backfill.Visibility = Visibility.Hidden;
+            //}
         }
     }
 }

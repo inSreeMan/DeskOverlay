@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.ComponentModel;
+using Newtonsoft.Json.Linq;
 
 namespace DeskOverlay
 {
@@ -21,7 +22,7 @@ namespace DeskOverlay
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            MainWindow = new MainWindow() as DeskOverlay.MainWindow;
+            getMainWindowToShow();
             MainWindow.Closing += MainWindow_Closing;
 
             _notifyIcon = new System.Windows.Forms.NotifyIcon();
@@ -32,6 +33,24 @@ namespace DeskOverlay
             CreateContextMenu();
 
             ShowMainWindow();
+        }
+
+        private void getMainWindowToShow()
+        {
+            if(JSettings.Mode == 1)
+            {
+                MainWindow = new TaskbarWindow() as DeskOverlay.TaskbarWindow;
+            }
+            else
+            {
+                MainWindow = new MainWindow() as DeskOverlay.MainWindow;
+            }
+
+        }
+
+        private void getAppSettingsFromJson()
+        {
+            System.Windows.Forms.MessageBox.Show(JSettings.AppDataFile); 
         }
 
         private void CreateContextMenu()
@@ -52,7 +71,7 @@ namespace DeskOverlay
 
         internal void ShowMainWindow()
         {
-            ((DeskOverlay.MainWindow)MainWindow).RefreshData();
+            ((iOverlayWindow)MainWindow).RefreshData();
             if (MainWindow.IsVisible)
             {
                 if (MainWindow.WindowState == WindowState.Minimized)
