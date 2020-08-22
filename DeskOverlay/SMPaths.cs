@@ -9,7 +9,7 @@ namespace DeskOverlay
 {
     public static class SMPaths
     {
-        private const string AppDomainName = "SymphonyApps";
+        private const string AppDomainName = "SMFrameworks";
         private static string getAppName(string appName = "")
         {
             return appName == "" ? System.Reflection.Assembly.GetExecutingAssembly().GetName().Name : appName; 
