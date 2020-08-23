@@ -16,4 +16,9 @@ All the appication settings are located under %appdata%\SMFrameworks\DeskOverlay
 * smbginfo.txt - content to be displayed in normal overlay mode (mode 0)
 * smtaskbarinfo.txt - content to be displayed in taskbar mode (mode 1)
 
+## How to use this applicaiton
 
+* For simpler usage, you can create one of the text files specified in the above settings section and it will auto select the mode and apply the default settings.
+* You can specify the content to be displayed, and it can be a calculated or automated output from one of your scripts or tools with a specific set of data like current system IP information etc.
+* Taskbar info mode is designed for quick system identification purpose, so it is recommended to use it with a relevant label that should be displayed on taskbar.
+* Advanced settings can be modified using settings.json file. Please refer to the sample settings.json file provided for more details on available settings and their valid values.
