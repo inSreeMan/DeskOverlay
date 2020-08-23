@@ -29,3 +29,4 @@ All the appication settings are located under %appdata%\SMFrameworks\DeskOverlay
 * DeskOverlay is a standalone application that can be used completely in portable mode by default. You can install the app to any of the folders you prefer by simple copying of the binaries.
 * Latest binaries can be compiled using Visual Studio after cloning this project.
 * Alternatively; you may choose to use the pre-compiled binaries available in zip format under the releases folder at the root of the cloned directory.
+* A set of sample settings are included under the samples folder at the root of the cloned directory.
