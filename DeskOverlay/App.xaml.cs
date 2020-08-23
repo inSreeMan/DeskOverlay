@@ -49,7 +49,7 @@ namespace DeskOverlay
 
             _notifyIcon = new System.Windows.Forms.NotifyIcon();
             _notifyIcon.DoubleClick += (s, args) => ShowMainWindow();
-            _notifyIcon.Icon = DeskOverlay.Properties.Resources.MyIcon;
+            _notifyIcon.Icon = DeskOverlay.Properties.Resources.blackmonitor;
             _notifyIcon.Visible = true;
 
             CreateContextMenu();
