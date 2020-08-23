@@ -22,3 +22,10 @@ All the appication settings are located under %appdata%\SMFrameworks\DeskOverlay
 * You can specify the content to be displayed, and it can be a calculated or automated output from one of your scripts or tools with a specific set of data like current system IP information etc.
 * Taskbar info mode is designed for quick system identification purpose, so it is recommended to use it with a relevant label that should be displayed on taskbar.
 * Advanced settings can be modified using settings.json file. Please refer to the sample settings.json file provided for more details on available settings and their valid values.
+
+
+## Installing the applciation
+
+* DeskOverlay is a standalone application that can be used completely in portable mode by default. You can install the app to any of the folders you prefer by simple copying of the binaries.
+* Latest binaries can be compiled using Visual Studio after cloning this project.
+* Alternatively; you may choose to use the pre-compiled binaries available in zip format under the releases folder at the root of the cloned directory.
