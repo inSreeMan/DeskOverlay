@@ -5,6 +5,8 @@ Supports 2 modes of displaying info:
 * bginfo style overlay: Display large data like a dynamic bginfo application.
 * taskbar info mode: Display a smaller data on the taskbar (on the left of systray)
 
+![DeskOverlay available modes](/screenshots/modes.png)
+
 One of the most common usage scenarios is when connecting to multiple systems using RDP.
 You can specify a system ID to be displayed on the taskbar to quickly identify the system while switching RDs windows.
 
