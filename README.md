@@ -8,7 +8,7 @@ Supports 2 modes of displaying info:
 One of the most common usage scenarios is when connecting to multiple systems using RDP.
 You can specify a system ID to be displayed on the taskbar to quickly identify the system while switching RDs windows.
 
-## Settings
+## About the application settings
 
 All the application settings are located under %appdata%\SMFrameworks\DeskOverlay folder
 
